@@ -2,17 +2,18 @@
 
 To build this App I used angular-seed project as boilerplate.
 ## To install this app
-
-`git clone https://github.com/dismel-eng/angularjstest`
-`npm install`
-`npm start`
+```
+$git clone https://github.com/dismel-eng/angularjstest
+$npm install
+$npm start
+```
 
 ## To run E2E test  
 
 To run e2e test I first set up my enviroment to use [Protractor](http://www.protractortest.org/#/tutorial) and I run either of this commands:
 
-`npm run protractor` or
-`protractor e2e-tests\protractor.conf.js`
+`$npm run protractor` or
+`$protractor e2e-tests\protractor.conf.js`
 
 ## Main functions
 
