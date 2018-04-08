@@ -1,42 +1,41 @@
 'use strict';
-
 /* https://github.com/angular/protractor/blob/master/docs/toc.md */
 
-describe('my app', function() {
+describe('UserMng App', function() {
+  beforeEach(function() {
+    browser.get('http://localhost:8000');
+  });
+  var userList = element.all(by.repeater('user in $ctrl.users'));
+  var inputSearch = element(by.model('$ctrl.search'));
+  var genderSelect = element(by.model('$ctrl.gender'));
 
-
-  it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
-    browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/view1");
+  it('Check model user list has 10 elements', function() {            
+      expect(userList.count()).toBe(10);      
   });
 
+  it('Make sure that the input search filter by name', function() {            
+    inputSearch.sendKeys('Jonh')
+    expect(userList.count()).toBe(1);
 
-  describe('view1', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#!/view1');
-    });
-
-
-    it('should render view1 when user navigates to /view1', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
-    });
-
+    inputSearch.clear();
+    inputSearch.sendKeys('Jimmy')
+  
+    expect(userList.count()).toBe(2);
+    inputSearch.clear();
   });
 
-
-  describe('view2', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#!/view2');
-    });
-
-
-    it('should render view2 when user navigates to /view2', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
-    });
-
+  it('Should delete one element', function(){
+    userList.get(1).element(by.css('input[type="checkbox"]')).click();  
+    element(by.css('.user-search-box input[value="Delete"]')).click();
+    expect(userList.count()).toBe(9);
+  });
+  it('Should delete multiple elements', function(){
+    element(by.css('.user-search-box input[value="Select All"]')).click();  
+    element(by.css('.user-search-box input[value="Delete"]')).click();
+    expect(userList.count()).toBe(0);
+  });
+  it('Should show only Female elements', function(){
+    genderSelect.element(by.css('option[value="Female"]')).click();
+    expect(userList.count()).toBe(4);
   });
 });

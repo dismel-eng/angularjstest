@@ -64,7 +64,7 @@
     },
     {
         "id": 10,
-        "first_name": "Stephan",
+        "first_name": "Jimmy",
         "last_name": "Craig",
         "email": "scraig@mail.com",
         "gender": "Male"

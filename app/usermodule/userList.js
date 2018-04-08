@@ -8,16 +8,21 @@ component('userList', {
   templateUrl: 'usermodule/user.template.html',  
   controller: ['UserService', UserListController] 
 });
+/*This is the funciton controller for this userlist component that has UserService injected*/
 function UserListController(UserService) {
     var ctrl = this;
-  
+    
+    //this array is going to show the list of user
     ctrl.users = [];
+    
     ctrl.getUserList = getUserList;    
     ctrl.selectAll = selectAll;
     ctrl.deleteUsers = deleteUsers;
     ctrl.unSelectAll = unSelectAll;
     ctrl.showselecteall = true;
+
     ctrl.getUserList();    
+    
     function getUserList(){
         
         UserService.getUsers().then(function(data){
