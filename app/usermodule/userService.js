@@ -1,4 +1,5 @@
 'use strict'
+/*This service is goint to fetch the users mock data and return this data as a promise.*/
 angular.module('UserModule')
 .factory('UserService',['$http', '$q', UserService])
 
