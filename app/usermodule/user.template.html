@@ -1,0 +1,31 @@
+<div class="user-container">
+    <div class="user-search-box">        
+        <input type="text" placeholder="search" ng-model="$ctrl.search"/>
+        <input type="button" class="btn-selec-all" value="Select All" 
+               ng-show="$ctrl.showselecteall" ng-click="$ctrl.selectAll()"/>
+        <input type="button" class="btn-selec-all" value="Unselect All" 
+               ng-show="!$ctrl.showselecteall" ng-click="$ctrl.unSelectAll()"/>
+        <input type="button" class="btn-selec-all" value="Delete" ng-click="$ctrl.deleteUsers()"/>
+        <select ng-model="$ctrl.gender">
+            <option value="" selected>All</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>            
+        </select> 
+    </div>    
+    <table>
+        <tr>
+            <th></th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+        </tr>
+        <tr ng-repeat="user in $ctrl.users | filter:{ first_name:$ctrl.search } | filterByGender:$ctrl.gender">
+            <td><input type="checkbox" ng-model="user.selected"/></td>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.gender}}</td>
+        </tr>
+    </table>
+</div>

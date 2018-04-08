@@ -1,0 +1,36 @@
+body{
+    width: 960px;    
+}
+.user-container{
+    width: 60%;
+    margin: 1em auto;    
+}
+.user-container input[type="text"]{
+    width: 60%;
+    height: 1em;    
+    border: none;
+    outline: 1px solid #ccc;
+    padding: .5em;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1em;
+}
+
+td, th {
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.btn-selec-all{
+    border: none;
+    background-color: #ccc;
+    padding: 0.5em;
+    border-radius: .5em; 
+}
