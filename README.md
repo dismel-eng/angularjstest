@@ -1,8 +1,12 @@
-# `angularjs` — Test
+# Angularjs — User Managment App
 
-  Create an Angularjs project to manage the user information using a hardcoded json:
-    
-    * List all the users in the json file.
-    * Remove one or multiple users.
-    * Search users by name.
-    * Show only Females.
+To build this App I used angular-seed project as boilerplate.
+## To install this app
+
+`git clone https://github.com/dismel-eng/angularjstest`
+`npm install`
+`npm start`
+
+## To run E2E test  
+
+I wrote the e2e test using [Protractor](http://www.protractortest.org/#/tutorial)
