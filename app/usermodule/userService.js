@@ -9,7 +9,7 @@ function UserService($http, $q){
             var deferred = $q.defer();
             $http({
                 method: 'GET',
-                url: 'userdata/userdata.js'
+                url: 'userdata/userdata.json'
               }).then(function sussces(response) {
                 
                 deferred.resolve( response.data !== undefined ? response.data : [] );

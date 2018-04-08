@@ -1,10 +1,16 @@
 body{
-    width: 960px;    
+    width: 960px;
+    font-family: Arial, Helvetica, sans-serif;    
 }
 .user-container{
     width: 60%;
     margin: 1em auto;    
 }
+
+.user-container h1{
+    text-align: center;
+}
+
 .user-container input[type="text"]{
     width: 60%;
     height: 1em;    

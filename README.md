@@ -9,7 +9,10 @@ To build this App I used angular-seed project as boilerplate.
 
 ## To run E2E test  
 
-I wrote the e2e test using [Protractor](http://www.protractortest.org/#/tutorial)
+To run e2e test I first set up my enviroment to use [Protractor](http://www.protractortest.org/#/tutorial) and I run either of this commands:
+
+`npm run protractor` or
+`protractor e2e-tests\protractor.conf.js`
 
 ## Main functions
 
@@ -26,26 +29,26 @@ Json example:
 
 ```
 [{
-"id": 1,
-"first_name": "FirstName",
-"last_name": "LastName",
-"email": "username@mail.com",
-"gender": "Female"
+  "id": 1,
+  "first_name": "FirstName",
+  "last_name": "LastName",
+  "email": "username@mail.com",
+  "gender": "Female"
 }]
 ```
 
 ## Folder structure
+```
+app
+  /userdata
+    userdata.json
+  /usermodule 
+    userdata.js
+  app.js
+```
 
-`app`
-    `/userdata`
-      `userdata.js`
-    `/usermodule` 
-      `userdata.js`
+I created a main module 'UserMngApp' in the app.js file as entry point for this App. In the folder 'userdata' is a hard-coded json `userdata.json` that contain the mockup data for this project. In the folder usermodule I created `UserModule` as the module in charge for manage the data about the users in the app.
 
-I created a main module 'UserMngApp' in the app.js file as entry point for this App. In the folder 'userdata' is a hard-coded json `userdata.js` that contain the mockup data for this project. In the folder
-usermodule I created `UserModule` as the module in charge for manage the data about the users in the app.
 On the other hand I created a service `UserService` that is going to fetch and return the user data. This
 service can have more function but for now only have the functionality to get the users from a json file
 using `$http` angularjs built in service. Also I built a `UserList` component to show and manage user information. The last file in this folder is `UserFilter` that have a filter service that help to filter user by gender.
-
-  
