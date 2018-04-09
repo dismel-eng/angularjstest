@@ -44,7 +44,10 @@ app
   /userdata
     userdata.json
   /usermodule 
-    userdata.js
+    userFilter.js
+    userList.js
+    userModule.js
+    userService.js
   app.js
 ```
 
